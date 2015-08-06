@@ -1,8 +1,14 @@
 Router.cordova = Router.cordova || {};
 
 Router.cordova.redirect = function(config) {
-  if (Meteor.isCordova) return;
+  if (!Meteor.isClient || Meteor.isCordova) return;
   config = config || {};
+  var options = {};
+  if (config.only) {
+    options.only = config.only;
+  } else if (config.except) {
+    options.except = config.except;
+  }
   Router.onBeforeAction(function() {
     setTimeout(function() {
       window.location.href = config.to || 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
@@ -12,8 +18,5 @@ Router.cordova.redirect = function(config) {
     } else {
       this.next();
     }
-  }, {
-    only: config.only || [],
-    except: config.except || []
-  });
+  }, options);
 };

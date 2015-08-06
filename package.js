@@ -7,7 +7,7 @@ Package.describe({
 
 Package.onUse(function (api, where) {
 
-  api.use('iron:router@1.0.9', 'client');
-  api.addFiles('lib.js', 'client');
+  api.use('iron:router@1.0.9');
+  api.addFiles('lib.js');
 
 });
