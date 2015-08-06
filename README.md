@@ -2,7 +2,7 @@ Installation
 ------------
 
 ``` sh
-meteor add gwendall:iron-router-cordova-redirect
+meteor add gwendall:iron-router-cordova-only
 ```
 
 What is does
