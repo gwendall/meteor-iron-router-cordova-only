@@ -9,7 +9,7 @@ What is does
 ============
 
 This package redirects visitors that are not accessing your app through Cordova.  
-It is particularly handy if you don't want to let people access to your app via a web browser by visiting its mobile-server url.
+It is particularly handy if you don't want to let people access your app via a web browser by visiting its mobile-server url.
 
 Configuration
 =======
