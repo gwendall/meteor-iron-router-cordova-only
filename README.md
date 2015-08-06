@@ -15,8 +15,8 @@ Configuration
 =======
 
 ``` javascript
-Router.cordova.redirect({
-  to: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', // Default redirect URL
+Router.cordova.only({
+  redirectTo: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', // URL the visitor will be redirected to
   redirectingTpl: 'redirecting', // Provide a template name if you want to temporarily render it before redirecting
   redirectingDelay: 1000, // Delay before redirecting
   only: [], // Only apply redirect to certain routes - pass an array of route names

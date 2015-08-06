@@ -1,6 +1,6 @@
 Router.cordova = Router.cordova || {};
 
-Router.cordova.redirect = function(config) {
+Router.cordova.only = function(config) {
   if (!Meteor.isClient || Meteor.isCordova) return;
   config = config || {};
   var options = {};
@@ -11,7 +11,7 @@ Router.cordova.redirect = function(config) {
   }
   Router.onBeforeAction(function() {
     setTimeout(function() {
-      window.location.href = config.to || 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+      window.location.href = config.redirectTo || 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
     }, config.redirectingDelay || 0);
     if (config.redirectingTpl) {
       this.render(config.redirectingTpl);
