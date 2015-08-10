@@ -1,8 +1,9 @@
 Router.cordova = Router.cordova || {};
 
 Router.cordova.only = function(config) {
-  if (!Meteor.isClient || Meteor.isCordova) return;
   config = config || {};
+  config.development = _.isBoolean(config.development) ? config.development : false;
+  if (Meteor.isDevelopment && !config.development || !Meteor.isClient || Meteor.isCordova) return;
   var options = {};
   if (config.only) {
     options.only = config.only;

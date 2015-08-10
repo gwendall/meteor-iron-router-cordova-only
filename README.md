@@ -21,5 +21,6 @@ Router.cordova.only({
   redirectingDelay: 1000, // Delay before redirecting
   only: [], // Only apply redirect to certain routes - pass an array of route names
   except: [], // Apply redirect to all routes except some - pass an array of route names
+  development: true // Pass true if you want the redirect to happen in development mode (false by default)
 });
 ```
